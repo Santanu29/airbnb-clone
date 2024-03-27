@@ -3,14 +3,11 @@ import { Nunito } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import ClientOnly from "./components/navbar/ClientOnly";
-
-import LoginModal from "./components/modals/LoginModal";
-import RentModal from "./components/modals/RentModal";
 import RegisterModal from "./components/modals/RegisterModal";
-import SearchModal from "./components/modals/SearchModal";
-
 import ToasterProvider from "./providers/ToasterProvider";
-import getCurrentUser from "./actions/getCurrentUser";
+import LoginModal from "./components/modals/LoginModal";
+import getCurrentUser from "./actions/getCurrentUser.";
+import RentModal from "./components/modals/RentModal";
 
 const font = Nunito({
   subsets: ["latin"],
@@ -36,10 +33,9 @@ export default async function RootLayout({
           <LoginModal />
           <RegisterModal />
           <RentModal />
-          <SearchModal />
           <Navbar currentUser={currentUser} />
         </ClientOnly>
-        <div className="pb-20 pt-28">{children}</div>
+        {children}
       </body>
     </html>
   );
